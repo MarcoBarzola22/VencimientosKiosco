@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 20% 10%;
+    --foreground: 210 20% 98%;
+
+    --card: 220 18% 14%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 220 18% 12%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 190 80% 50%;
+    --primary-foreground: 220 20% 10%;
+
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 190 70% 45%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 220 15% 22%;
+    --input: 220 15% 20%;
+    --ring: 190 80% 50%;
+
+    --radius: 1rem;
+
+    /* Custom expiration status colors */
+    --status-danger: 0 84% 60%;
+    --status-danger-bg: 0 84% 60% / 0.15;
+    --status-warning: 38 92% 50%;
+    --status-warning-bg: 38 92% 50% / 0.15;
+    --status-safe: 142 71% 45%;
+    --status-safe-bg: 142 71% 45% / 0.15;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(190 80% 50%), hsl(210 80% 55%));
+    --gradient-card: linear-gradient(145deg, hsl(220 18% 16%), hsl(220 18% 12%));
+
+    /* Shadows */
+    --shadow-card: 0 4px 20px -4px hsl(220 20% 5% / 0.5);
+    --shadow-fab: 0 8px 30px -4px hsl(190 80% 50% / 0.4);
+    --shadow-fab-hover: 0 12px 40px -4px hsl(190 80% 50% / 0.6);
+
+    --sidebar-background: 220 20% 10%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 190 80% 50%;
+    --sidebar-primary-foreground: 220 20% 10%;
+    --sidebar-accent: 220 15% 18%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 220 15% 22%;
+    --sidebar-ring: 190 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .status-danger {
+    @apply bg-[hsl(var(--status-danger-bg))] text-[hsl(var(--status-danger))] border border-[hsl(var(--status-danger)/0.3)];
+  }
+  
+  .status-warning {
+    @apply bg-[hsl(var(--status-warning-bg))] text-[hsl(var(--status-warning))] border border-[hsl(var(--status-warning)/0.3)];
+  }
+  
+  .status-safe {
+    @apply bg-[hsl(var(--status-safe-bg))] text-[hsl(var(--status-safe))] border border-[hsl(var(--status-safe)/0.3)];
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .shadow-fab {
+    box-shadow: var(--shadow-fab);
+  }
+
+  .shadow-fab-hover {
+    box-shadow: var(--shadow-fab-hover);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+}
